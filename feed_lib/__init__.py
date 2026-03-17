@@ -1,1 +1,1 @@
-from .base import *
+from feed_lib.base import *
