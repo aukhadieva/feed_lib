@@ -7,6 +7,7 @@ BaseDBModel = declarative_base()
 class TestModelDB(BaseDBModel):
     """Test database model."""
     __tablename__ = 'test_model'
+    table_args = {'schema': 'lib'}
 
     uuid: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4())
     name: Mapped[str] = mapped_column(nullable=False, unique=True)
@@ -14,6 +15,7 @@ class TestModelDB(BaseDBModel):
 class Test2ModelDB(BaseDBModel):
     """Test database model."""
     __tablename__ = 'test2_model'
+    table_args = {'schema': 'lib'}
 
     uuid: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4())
     name: Mapped[str] = mapped_column(nullable=False, unique=True)
