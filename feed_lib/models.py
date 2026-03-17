@@ -10,3 +10,10 @@ class TestModelDB(BaseDBModel):
 
     uuid: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4())
     name: Mapped[str] = mapped_column(nullable=False, unique=True)
+
+class Test2ModelDB(BaseDBModel):
+    """Test database model."""
+    __tablename__ = 'test2_model'
+
+    uuid: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4())
+    name: Mapped[str] = mapped_column(nullable=False, unique=True)
